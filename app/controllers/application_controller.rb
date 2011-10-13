@@ -72,8 +72,8 @@ class ApplicationController < ActionController::Base
     return @current_site = Site.find_by_path(session[:current_site]) if session[:current_site]
     site_host = request.host.gsub "www.", ""
     @current_site = Site.find_by_host site_host
-    @current_site = Site.find_by_path("catarse") unless @current_site
-    @current_site = Factory(:site, :name => "Catarse", :path => "catarse") unless @current_site
+    @current_site = Site.find_by_path("sujeito") unless @current_site
+    @current_site = Factory(:site, :name => "Sujeito a Reboque", :path => "sujeito") unless @current_site
     @current_site
   end
   def current_user
